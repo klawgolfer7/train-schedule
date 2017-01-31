@@ -15,18 +15,26 @@ var frequency = "";
 
 $("#addTrain").on('click',function() {
 	name = $("#trainNameInput").val().trim();
-	console.log(name);
 	destination = $("#destinationInput").val().trim();
 	trainTime = $("#firstTimeInput").val().trim();
 	frequency = $("#frequencyInput").val().trim();
+	console.log(name);
+	console.log(destination);
+	console.log(trainTime);
+	console.log(frequency);
 
-	firebase.database().ref().set({
+	database().ref().set({
 		name:name,
 		destination:destination,
 		trainTime:trainTime,
 		frequency:frequency
-	})
-})
+	});
+
+	// Don't refresh the page!
+	return false;
+});
+
+
 
 
 
