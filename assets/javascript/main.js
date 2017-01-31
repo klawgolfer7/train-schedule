@@ -8,3 +8,27 @@ messagingSenderId: "962062933098"
 };
 firebase.initializeApp(config);
 
+var name = "";
+var destination = "";
+var trainTime = "";
+var frequency = "";
+
+$("#addTrain").on('click',function() {
+	name = $("#trainNameInput").val().trim();
+	destination = $("#destinationInput").val().trim();
+	trainTime = $("#firstTimeInput").val().trim();
+	frequency = $("#frequencyInput").val().trim();
+
+	firebase.database().ref().set( {
+		name:name,
+		destination:destination,
+		trainTime:trainTime,
+		frequency:frequency
+	})
+})
+
+
+
+
+
+
