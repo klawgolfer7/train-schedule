@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDnYokM_9lNNbbVLdsCoi5Z3VdPDP-SsDQ",
@@ -8,32 +10,33 @@
   };
   firebase.initializeApp(config);
 
-var name = "";
-var destination = "";
-var trainTime = "";
-var frequency = "";
+	var name = "";
+	var destination = "";
+	var trainTime = "";
+	var frequency = "";
 
-$("#addTrain").on('click',function() {
-	name = $("#trainNameInput").val().trim();
-	destination = $("#destinationInput").val().trim();
-	trainTime = $("#firstTimeInput").val().trim();
-	frequency = $("#frequencyInput").val().trim();
-	console.log(name);
-	console.log(destination);
-	console.log(trainTime);
-	console.log(frequency);
+	$("#addTrain").on('click',function() {
+		name = $("#trainNameInput").val().trim();
+		destination = $("#destinationInput").val().trim();
+		trainTime = $("#firstTimeInput").val().trim();
+		frequency = $("#frequencyInput").val().trim();
+		console.log(name);
+		console.log(destination);
+		console.log(trainTime);
+		console.log(frequency);
 
-	database().ref().set({
-		name:name,
-		destination:destination,
-		trainTime:trainTime,
-		frequency:frequency
+		firebase.database().ref().set({
+			name:name,
+			destination:destination,
+			trainTime:trainTime,
+			frequency:frequency
+		});
+
+		// Don't refresh the page!
+		return false;
 	});
 
-	// Don't refresh the page!
-	return false;
 });
-
 
 
 
