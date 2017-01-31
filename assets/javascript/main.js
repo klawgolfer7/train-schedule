@@ -25,7 +25,7 @@ $(document).ready(function() {
 		console.log(trainTime);
 		console.log(frequency);
 
-		firebase.database().ref().set({
+		firebase.database().ref().push({
 			name:name,
 			destination:destination,
 			trainTime:trainTime,
@@ -35,6 +35,15 @@ $(document).ready(function() {
 		// Don't refresh the page!
 		return false;
 	});
+
+	firebase.database().ref().on("value", function(snapshot) {
+		$("#trainNameDisplay").html(snapshot.val().name);
+		$("#destinationDisplay").html(snapshot.val().destination);
+		$("#frequencyDisplay").html(snapshot.val().frequency);
+		$("#nextArrivaDisplay").html(snapshot.val().name);
+		$("#minutesAwayDisplay").html(snapshot.val().name);
+	
+	})
 
 });
 
