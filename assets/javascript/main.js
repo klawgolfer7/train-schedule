@@ -77,7 +77,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var nufirstTrainTime = childSnapshot.val().firstTrainTime;
 
 
-  console.log(nutrain);
+console.log(nutrain);
 console.log(nudestination);
 console.log(nufrequency);
 console.log(nufirstTrainTime);
