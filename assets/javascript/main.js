@@ -94,7 +94,7 @@ var nextTrain = moment().add(minUntilTrain, "minutes");
 
 
 
-$("#display").append("<tr><td id='trainDisplay'>" + childSnapshot.val().train + "</td><td id='destinationDisplay'>" + childSnapshot.val().destination + "</td><td id='frequencyDisplay'>" + "Every" + childSnapshot.val().frequency + "mins" + "</td><td id='nextArrivalDisplay'>" + moment(nextTrain).format("hh:mm A") + "</td><td id='minutesAwayDisplay'>" + minUntilTrain + "minutes until arrival" + "</td>");
+$("#display").append("<tr><td id='trainDisplay'>" + childSnapshot.val().train + "</td><td id='destinationDisplay'>" + childSnapshot.val().destination + "</td><td id='frequencyDisplay'>" + "Every " + childSnapshot.val().frequency + " mins" + "</td><td id='nextArrivalDisplay'>" + moment(nextTrain).format("hh:mm A") + "</td><td id='minutesAwayDisplay'>" + minUntilTrain + " minutes until arrival" + "</td>");
 
 })
 
