@@ -48,7 +48,9 @@ database.ref().push(newTrain);
 console.log(newTrain.train);
 console.log(newTrain.destination);
 console.log(newTrain.frequency);
-console.log(newTrain.firstTrainTime);
+
+
+
 
 //clears all the text boxes
 $("#formGroupTrainName").val("");
@@ -69,7 +71,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
   console.log(childSnapshot.val());
 
-  //store everything into a variable
+  //store everything into a variable  
 
   var nutrain = childSnapshot.val().train;
   var nudestination = childSnapshot.val().destination;
